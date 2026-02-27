@@ -48,6 +48,7 @@ tcp_server_multiprocess
 tcp_server_multithread
 tcp_server_thread_pool
 ThreadPool-test
+epoll_tcp_lt
 
 # ignore ide files
 .vscode/
