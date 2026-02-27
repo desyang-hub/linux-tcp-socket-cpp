@@ -10,3 +10,26 @@
 对于线程池中的线程，它们的任务就是不断从任务队列中取出任务并进行执行，此时就会出现竞争问题，必须保证同时只有一个线程访问任务队列，确保每个任务只会被执行一次
 
 注意任务可以是任意函数，只需要传入函数，以及它所需要的参数，那么这就是一个可以由线程来完成的任务。
+
+
+### 要求
+``` code
+ThreadPool {
+data{
+    vector<std::thread> workers;
+    queue<std::functional<void()>> tasks;
+    std::mutex m_mutex;
+    std::condition_variable m_condition;
+    bool stop;
+}
+
+function{
+    // explicit 避免意外构造
+    explicit ThreadPool();  // 初始化构造启动
+    ~ThreadPool(); // 资源回收
+
+    template<class FUNC>
+    void enqueue(Func &&func); // 提交任务
+}
+}
+```

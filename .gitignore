@@ -46,6 +46,8 @@ tcp_client
 tcp_server
 tcp_server_multiprocess
 tcp_server_multithread
+tcp_server_thread_pool
+ThreadPool-test
 
 # ignore ide files
 .vscode/
