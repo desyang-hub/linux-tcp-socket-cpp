@@ -39,3 +39,13 @@
 
 # debug information files
 *.dwo
+
+
+# ignore without extension files
+tcp_client
+tcp_server
+tcp_server_multiprocess
+tcp_server_multithread
+
+# ignore ide files
+.vscode/
