@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package user;
+
+message LoginRequest {
+    required string service_name = 1;
+    required string method_name = 2;
+    
+    message UserInfo {
+        required string name = 1;
+        required string password = 2;
+    }
+
+    required UserInfo userinfo = 3;
+}
